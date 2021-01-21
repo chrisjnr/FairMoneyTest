@@ -1,8 +1,6 @@
 package com.loveworldapps.fairmoneytest.di.modules
 
 import com.loveworldapps.fairmoneytest.ui.UserViewModel
-import com.loveworldapps.fairmoneytest.ui.UserViewModelFactory
-import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 
