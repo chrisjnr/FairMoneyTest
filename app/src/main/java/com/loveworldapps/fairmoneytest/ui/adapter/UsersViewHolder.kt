@@ -28,7 +28,6 @@ class UsersViewHolder(
     private val progressBar = itemView.findViewById<ProgressBar>(R.id.progress)
     private val farmerImage = itemView.findViewById<ImageView>(R.id.shop_icon)
     private val usersEmail = itemView.findViewById<TextView>(R.id.usersEmail)
-    private val viewMore = itemView.findViewById<ImageView>(R.id.viewMore)
 
     var user : User? = null
 
@@ -41,9 +40,6 @@ class UsersViewHolder(
         nameView.text = "${user.firstName.toLowerCase().capitalize()} ${user.lastName.toLowerCase().capitalize()}"
 
         itemView.setOnClickListener {
-            clickListener.viewMore(user)
-        }
-        viewMore.setOnClickListener {
             clickListener.viewMore(user)
         }
         usersEmail.text = "${user.email}"
