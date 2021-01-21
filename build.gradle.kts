@@ -4,7 +4,6 @@ buildscript {
     repositories {
         google()
         jcenter()
-        mavenCentral()
     }
     dependencies {
         val  nav_version = "2.3.0"
@@ -22,5 +21,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url = uri("https://jitpack.io") }
+        mavenCentral()
+
+
     }
 }

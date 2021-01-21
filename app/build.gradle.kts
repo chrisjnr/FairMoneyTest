@@ -27,16 +27,20 @@ android {
         create("staging"){
             this.multiDexEnabled = true
             applicationIdSuffix = ".staging"
-            buildConfigField("String", "base_url",  "\"https://theagromall.com/api/v2/\"")
+            buildConfigField("String", "base_url",  "\"https://dummyapi.io/data/\"")
             buildConfigField("Boolean", "DEBUG",  "\"TRUE\"")
+            buildConfigField("String", "api_key",  "\"6005788bb90772d5e25dd9c7\"")
+
 
 
         }
 
 
         create("live"){
-            buildConfigField("String", "base_url",  "\"https://theagromall.com/api/v2/\"")
+            buildConfigField("String", "base_url",  "\"https://dummyapi.io/data/\"")
             buildConfigField("Boolean", "DEBUG",  "\"FALSE\"")
+            buildConfigField("String", "api_key",  "\"6005788bb90772d5e25dd9c7\"")
+
 
         }
 
@@ -161,6 +165,10 @@ dependencies {
 
 
     implementation ("cn.pedant.sweetalert:library:1.3")
+
+
+    implementation ("com.github.chnouman:AwesomeDialog:1.0.5")
+
 
 
 }
