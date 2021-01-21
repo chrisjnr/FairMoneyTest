@@ -7,7 +7,6 @@ import com.loveworldapps.fairmoneytest.api.FairMoneyApi
 import com.loveworldapps.fairmoneytest.api.config.AuthInterceptor
 import com.loveworldapps.fairmoneytest.api.config.ConnectivityCheckerInterceptor
 import com.loveworldapps.fairmoneytest.api.config.NetworkResponseAdapterFactory
-import com.loveworldapps.fairmoneytest.api.config.PrefsUser
 import com.loveworldapps.fairmoneytest.api.models.User
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -30,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addCallAdapterFactory(NetworkResponseAdapterFactory())
-            .baseUrl("https://dummyapi.io/data/")
+            .baseUrl(BuildConfig.base_url)
             .client(okHttpClient)
             .build()
 
@@ -55,9 +54,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
     private fun provideUser() = User()
-
-private fun provideUserPrefs(context: Context):PrefsUser = PrefsUser()
-
     private fun provideDb(context: Context):UsersDatabase  = UsersDatabase.getInstance(context)
 
     val appModule = module {
@@ -67,6 +63,5 @@ private fun provideUserPrefs(context: Context):PrefsUser = PrefsUser()
         single { provideApiService(get()) }
         single { provideDb(androidContext()) }
         single { provideUser() }
-        single { provideUserPrefs(androidContext()) }
         single { provideAuthInterceptor() }
     }
