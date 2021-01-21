@@ -2,7 +2,7 @@ package com.loveworldapps.fairmoneytest.api.config;
 
 import androidx.annotation.NonNull;
 
-import com.loveworldapps.fairmoneytest.api.Session;
+import com.loveworldapps.fairmoneytest.BuildConfig;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -21,7 +21,6 @@ public class AuthInterceptor implements Interceptor {
     @NotNull
     @Override
     public Response intercept(@NonNull  Chain chain) throws IOException {
-// TODO: 18/01/2021 use build config constants for api key
         Request originalRequest = chain.request();
 
         HttpUrl url = originalRequest.url().newBuilder()
@@ -29,7 +28,7 @@ public class AuthInterceptor implements Interceptor {
 
         Headers.Builder headerBuilder = originalRequest.headers().newBuilder();
 
-            headerBuilder.add("app-id",  "6005788bb90772d5e25dd9c7");
+            headerBuilder.add("app-id", BuildConfig.api_key);
 
         Request authorizationRequest = originalRequest.newBuilder()
                 .url(url)
