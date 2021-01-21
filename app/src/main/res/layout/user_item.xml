@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:id="@+id/imageFrame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/shop_icon"
+                android:padding="5dp"
+                tools:src="@drawable/ic_man"
+                android:layout_width="70dp"
+                android:layout_gravity="start"
+                android:layout_height="70dp" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="start|center_vertical" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins"
+            android:text="Users  name"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/imageFrame"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/usersEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:text="Ibadan"
+
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toRightOf="@id/imageFrame"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <ImageView
+            android:id="@+id/viewMore"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="161dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/usersEmail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
