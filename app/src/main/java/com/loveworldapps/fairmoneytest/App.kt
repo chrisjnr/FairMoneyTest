@@ -1,9 +1,9 @@
 package com.loveworldapps.fairmoneytest
 
 import android.app.Application
+import com.loveworldapps.data.di.allRepositoryImplViewModules
+import com.loveworldapps.data.di.appModuleImpl
 import com.loveworldapps.fairmoneytest.di.modules.ViewModelModule
-import com.loveworldapps.fairmoneytest.di.modules.allRepositoryViewModules
-import com.loveworldapps.fairmoneytest.di.modules.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -16,7 +16,7 @@ class App  : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@App)
-            modules(listOf(appModule, allRepositoryViewModules, ViewModelModule))
+            modules(listOf( allRepositoryImplViewModules, ViewModelModule, appModuleImpl))
         }
 
 
