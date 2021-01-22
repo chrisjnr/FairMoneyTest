@@ -91,7 +91,7 @@ object Libs{
 
     object JUnit{
         private const val version = "1.1.2"
-        private const val jUnitVersion = "junit:4.+"
+        private const val jUnitVersion = "junit:4.12"
         const val junit = "androidx.test.ext:junit:$version"
         const val junit4 = "junit:$jUnitVersion"
     }
