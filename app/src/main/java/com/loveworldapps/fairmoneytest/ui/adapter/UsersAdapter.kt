@@ -5,7 +5,7 @@ package com.loveworldapps.fairmoneytest.ui.adapter
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
-import com.loveworldapps.fairmoneytest.api.models.User
+import com.loveworldapps.domain.model.User
 
 class UsersAdapter(private val clickListener:  onClickListener) : PagedListAdapter<User, UsersViewHolder>(diffCallback) {
     interface onClickListener{
@@ -14,7 +14,10 @@ class UsersAdapter(private val clickListener:  onClickListener) : PagedListAdapt
 
 
     override fun onBindViewHolder(holder: UsersViewHolder, position: Int) {
-        holder.bindTo(getItem(position)!!)
+        getItem(position)?.let {
+            holder.bindTo(it)
+
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder =

@@ -1,18 +1,19 @@
 package com.loveworldapps.fairmoneytest.api.dataSource
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PagedList
+import com.loveworldapps.data.UserRepositoryImpl
+import com.loveworldapps.domain.model.User
+import com.loveworldapps.domain.model.UserResponse
 import com.loveworldapps.fairmoneytest.Constants
-import com.loveworldapps.fairmoneytest.api.models.User
-import com.loveworldapps.fairmoneytest.api.models.UserResponse
-import com.loveworldapps.fairmoneytest.repository.UserRepository
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
 /**
  * Created by manuelchris-ogar on 20/01/2021.
  */
-class UserBoundaryCallback constructor(val repository: UserRepository) :
+class UserBoundaryCallback(val repository: UserRepositoryImpl) :
         PagedList.BoundaryCallback<User?>() {
     private val compositeDisposable: CompositeDisposable = CompositeDisposable()
     val progressLiveStatus = MutableLiveData<String>()
@@ -57,6 +58,7 @@ class UserBoundaryCallback constructor(val repository: UserRepository) :
                                 },
                                 { throwable: Throwable? ->
                                     run {
+                                        Log.e("errrr", throwable!!.localizedMessage)
                                         progressLiveStatus.postValue(Constants.CHECK_NETWORK_ERROR)
                                     }
                                 }

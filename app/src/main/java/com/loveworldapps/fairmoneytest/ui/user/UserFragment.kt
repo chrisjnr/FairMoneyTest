@@ -7,14 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
-import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import androidx.transition.TransitionInflater
 import com.example.awesomedialog.*
+import com.loveworldapps.domain.model.User
 import com.loveworldapps.fairmoneytest.Constants
 import com.loveworldapps.fairmoneytest.R
-import com.loveworldapps.fairmoneytest.api.dataSource.UserBoundaryCallback
-import com.loveworldapps.fairmoneytest.api.models.User
 import com.loveworldapps.fairmoneytest.databinding.FragmentUserBinding
 import com.loveworldapps.fairmoneytest.ui.UserViewModel
 import com.loveworldapps.fairmoneytest.ui.adapter.UsersAdapter

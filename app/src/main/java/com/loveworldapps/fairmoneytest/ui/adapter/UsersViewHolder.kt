@@ -8,8 +8,8 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.loveworldapps.domain.model.User
 import com.loveworldapps.fairmoneytest.R
-import com.loveworldapps.fairmoneytest.api.models.User
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
@@ -35,7 +35,7 @@ class UsersViewHolder(
      * Items might be null if they are not paged in yet. PagedListAdapter will re-bind the
      * ViewHolder when Item is loaded.
      */
-    fun bindTo(user : User) {
+    fun bindTo(user: com.loveworldapps.domain.model.User) {
         this.user = user
         nameView.text = "${user.firstName.toLowerCase().capitalize()} ${user.lastName.toLowerCase().capitalize()}"
 

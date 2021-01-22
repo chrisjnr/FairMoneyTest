@@ -3,18 +3,18 @@ package com.loveworldapps.fairmoneytest.ui
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.distinctUntilChanged
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
+import com.loveworldapps.data.UserRepositoryImpl
+import com.loveworldapps.domain.model.User
 import com.loveworldapps.fairmoneytest.api.dataSource.*
-import com.loveworldapps.fairmoneytest.api.models.User
-import com.loveworldapps.fairmoneytest.repository.UserRepository
+
 import io.reactivex.disposables.CompositeDisposable
 
 /**
  * Created by manuelchris-ogar on 18/01/2021.
  */
-class UserViewModel(private val userRepository: UserRepository):ViewModel() {
+class UserViewModel(private val userRepository: UserRepositoryImpl):ViewModel() {
 
     lateinit var storedUsers : LiveData<PagedList<User>>
 
@@ -32,7 +32,7 @@ class UserViewModel(private val userRepository: UserRepository):ViewModel() {
     )
 
     val pagedListConfig = PagedList.Config.Builder()
-            .setPrefetchDistance(50)
+            .setPrefetchDistance(10)
             .setPageSize(10).build()
 
     storedUsers = LivePagedListBuilder(
