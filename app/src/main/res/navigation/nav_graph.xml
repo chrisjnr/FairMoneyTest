@@ -15,8 +15,5 @@
         android:id="@+id/userDetailFragment"
         android:name="com.loveworldapps.fairmoneytest.ui.userDetail.UserDetailFragment"
         android:label="UserDetailFragment" >
-        <argument
-            android:name="user"
-            app:argType="com.loveworldapps.fairmoneytest.api.models.User" />
     </fragment>
 </navigation>
