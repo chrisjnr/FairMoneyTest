@@ -1,9 +1,8 @@
 package com.loveworldapps.data.mapper.entity
 
+import androidx.annotation.NonNull
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.loveworldapps.data.mapper.EntityMapper
-import com.loveworldapps.domain.model.User
 
 /**
  * Created by manuelchris-ogar on 21/01/2021.
@@ -11,6 +10,7 @@ import com.loveworldapps.domain.model.User
 @Entity(tableName = "user_table")
 data class UserEntity(
 
+    @NonNull
     @PrimaryKey
     val id: String,
     val email: String,
