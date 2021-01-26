@@ -2,6 +2,8 @@ plugins {
     id ("com.android.library")
     id ("kotlin-android")
     kotlin( "kapt")
+    id ("koin")
+
 }
 
 android {
@@ -121,7 +123,7 @@ dependencies {
 
     implementation("com.google.truth:truth:1.0.1")
 
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.9.0")
+    testImplementation("com.squareup.okhttp3:mockwebserver:3.9.0")
 
 //    testImplementation (" org.assertj:assertj-core:1.7.1")
 
@@ -130,7 +132,6 @@ dependencies {
     androidTestImplementation ("androidx.arch.core:core-testing:2.1.0")
 
 
-    implementation ("androidx.test:core:1.2.0")
     testImplementation ("org.hamcrest:hamcrest-all:1.3")
     testImplementation ("androidx.arch.core:core-testing:2.1.0")
     testImplementation ("org.robolectric:robolectric:4.3.1")
@@ -140,6 +141,11 @@ dependencies {
     androidTestImplementation ("androidx.test:core:1.1.0")
     androidTestImplementation ("androidx.test.ext:junit:1.1.0")
     androidTestImplementation ("androidx.test:rules:1.1.1")
+
+    //Mockk
+    testImplementation ("io.mockk:mockk:1.10.5")
+//Koin Test
+//    androidTestImplementation ("org.koin:koin-test:$koin_version")
 
 
 
