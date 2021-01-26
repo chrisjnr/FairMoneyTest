@@ -21,4 +21,6 @@ interface UserRepository {
 
     fun getAllUsers(): DataSource.Factory<Int, User>
 
+    fun searchForUser(query: String): List<User>
+
 }

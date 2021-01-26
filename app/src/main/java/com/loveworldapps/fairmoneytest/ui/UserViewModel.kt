@@ -7,14 +7,13 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.loveworldapps.data.UserRepositoryImpl
 import com.loveworldapps.domain.model.User
-import com.loveworldapps.fairmoneytest.api.dataSource.*
-
+import com.loveworldapps.fairmoneytest.api.dataSource.UserBoundaryCallback
 import io.reactivex.disposables.CompositeDisposable
 
 /**
  * Created by manuelchris-ogar on 18/01/2021.
  */
-class UserViewModel(private val userRepository: UserRepositoryImpl):ViewModel() {
+class UserViewModel( val userRepository: UserRepositoryImpl):ViewModel() {
 
     lateinit var storedUsers : LiveData<PagedList<User>>
 
